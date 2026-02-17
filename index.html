@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="GcOyMBFEAv6I6flnx_JzQ_4e7EIYgsj_ZU2udep4Hzo">
+<title>Paige Weber</title>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600;700&family=Crimson+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a4a4a;
+  --text-light: #6b6b6b;
+  --accent: #333333;
+  --accent-hover: #111111;
+  --bg-main: #fafafa;
+  --bg-white: #ffffff;
+  --border: #d8d8d8;
+  --border-light: #ebebeb;
+  --nav-bg: #ffffff;
+  --max-width: 820px;
+  --transition: 0.2s ease;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Source Sans 3', -apple-system, sans-serif;
+  color: var(--text-primary);
+  background: var(--bg-main);
+  line-height: 1.7;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* NAV */
+header {
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.site-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  letter-spacing: 0.5px;
+}
+.site-title:hover { color: var(--accent); }
+
+nav { display: flex; gap: 6px; }
+
+nav a {
+  text-decoration: none;
+  color: var(--text-secondary);
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 4px;
+  transition: all var(--transition);
+}
+nav a:hover, nav a.active {
+  color: var(--accent);
+  background: rgba(0,0,0,0.04);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+/* MAIN */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* HOME */
+.home-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+  margin-bottom: 60px;
+}
+
+.home-info h2 {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.home-info .role {
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+
+.home-info .role a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.home-info .role a:hover {
+  border-bottom-color: var(--accent);
+}
+
+.home-info .affiliations {
+  margin-top: 16px;
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.9;
+}
+.home-info .affiliations a {
+  color: var(--text-light);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--border);
+  transition: all var(--transition);
+}
+.home-info .affiliations a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+.home-info .contact {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.headshot-placeholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #e8edf2, #d4dce6);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-light);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid var(--border-light);
+}
+
+/* SECTION HEADERS */
+.section-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 28px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--border);
+}
+
+.subsection-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+/* RECENT RESEARCH (HOME) */
+.recent-research {
+  margin-top: 20px;
+}
+
+.research-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.research-card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  padding: 24px;
+  transition: all var(--transition);
+}
+.research-card:hover {
+  border-color: var(--border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+}
+
+.research-card a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+.research-fig {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 4px;
+  margin-bottom: 14px;
+  background: #f5f5fa;
+}
+
+.card-text .journal {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.card-text .paper-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--text-primary);
+}
+
+.research-card:hover .paper-title {
+  color: var(--accent);
+}
+
+/* RESEARCH PAGE */
+.paper-entry {
+  margin-bottom: 28px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border-light);
+}
+.paper-entry:last-child { border-bottom: none; }
+
+.paper-entry .paper-title {
+  font-family: 'Crimson Pro', Georgia, serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.paper-entry .authors {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+
+.paper-entry .venue {
+  font-size: 14px;
+  color: var(--text-light);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+
+.paper-entry .award {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.paper-entry .links {
+  margin-top: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.paper-entry .links a {
+  font-size: 14px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition);
+}
+.paper-entry .links a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+/* BIO */
+.bio-text {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.bio-text p { margin-bottom: 18px; }
+.bio-text a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition);
+}
+.bio-text a:hover { border-bottom-color: var(--accent); }
+
+/* TEACHING */
+.teaching-content {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-secondary);
+}
+.teaching-content strong {
+  color: var(--text-primary);
+}
+.course-item {
+  margin-bottom: 8px;
+  padding-left: 16px;
+  border-left: 3px solid var(--border);
+}
+
+/* CV */
+.cv-content {
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.cv-content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 4px;
+  margin-top: 8px;
+  transition: all var(--transition);
+}
+.cv-content a:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* FOOTER */
+footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 24px 24px 48px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--text-light);
+  border-top: 1px solid var(--border-light);
+}
+
+/* PAGE VISIBILITY */
+.page { display: none; }
+.page.active { display: block; }
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .hamburger { display: block; }
+  nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    background: var(--nav-bg);
+    border-bottom: 1px solid var(--border);
+    flex-direction: column;
+    padding: 12px 24px;
+    gap: 0;
+  }
+  nav.open { display: flex; }
+  nav a {
+    padding: 10px 0;
+    border-radius: 0;
+  }
+  .home-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .home-grid .headshot-placeholder { order: -1; max-width: 280px; }
+  .research-grid { grid-template-columns: 1fr; }
+  main { padding: 32px 20px 60px; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="site-title" onclick="showPage('home'); return false;">PAIGE WEBER</a>
+    <button class="hamburger" onclick="document.querySelector('nav').classList.toggle('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <nav id="main-nav">
+      <a href="#" class="active" data-page="home" onclick="showPage('home'); return false;">Home</a>
+      <a href="#" data-page="bio" onclick="showPage('bio'); return false;">Bio</a>
+      <a href="#" data-page="research" onclick="showPage('research'); return false;">Research</a>
+      <a href="#" data-page="cv" onclick="showPage('cv'); return false;">CV</a>
+      <a href="#" data-page="teaching" onclick="showPage('teaching'); return false;">Teaching</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HOME PAGE -->
+<div id="page-home" class="page active">
+  <div class="home-grid">
+    <div class="home-info">
+      <h2>Assistant Professor</h2>
+      <div class="role">
+        <a href="https://erg.berkeley.edu/">Energy and Resources Group</a><br>
+        University of California, Berkeley
+      </div>
+      <div class="affiliations">
+        Faculty Affiliate, <a href="https://haas.berkeley.edu/energy-institute/">Energy Institute at Haas</a><br>
+        Fellow, <a href="https://www.cesifo.org/en">CESifo Research Network</a><br>
+        Research Affiliate, <a href="https://emlab.ucsb.edu/">emLab</a>
+      </div>
+      <div class="contact">
+        contact: paigeweber at berkeley dot edu
+      </div>
+    </div>
+    <div>
+      <img src="website_photo_jul2021.png" alt="Paige Weber" style="width:100%; border-radius:6px; border:1px solid var(--border-light);">
+    </div>
+  </div>
+
+  <div class="recent-research">
+    <h2 class="section-title">Recent Research</h2>
+    <div class="research-grid">
+      <div class="research-card">
+        <a href="https://www.journals.uchicago.edu/doi/10.1086/729841">
+          <img src="JAERE_on_wind_coef_decomp.png" alt="JAERE figure" class="research-fig">
+          <div class="card-text">
+            <div class="journal">JAERE</div>
+            <div class="paper-title">Intermittency or Uncertainty? Impacts of Renewable Energy on Electricity Markets</div>
+          </div>
+        </a>
+      </div>
+      <div class="research-card">
+        <a href="https://www.journals.uchicago.edu/doi/10.1086/722674">
+          <img src="EEPE_figure4b.png" alt="EEPE figure" class="research-fig">
+          <div class="card-text">
+            <div class="journal">EEPE</div>
+            <div class="paper-title">Decomposing Trends in U.S. Air Pollution Disparities from Electricity</div>
+          </div>
+        </a>
+      </div>
+      <div class="research-card">
+        <a href="https://www.sciencedirect.com/science/article/pii/S0928765523000313#fig0010">
+          <img src="REE_AllScenario_Consumption_Capacity.png" alt="REE figure" class="research-fig">
+          <div class="card-text">
+            <div class="journal">Resource &amp; Energy Economics</div>
+            <div class="paper-title">Can Bitcoin Mining Increase Renewable Electricity Capacity?</div>
+          </div>
+        </a>
+      </div>
+      <div class="research-card">
+        <a href="https://www.nature.com/articles/s41560-023-01259-y">
+          <img src="NatureEnergy_fig.png" alt="Nature Energy figure" class="research-fig">
+          <div class="card-text">
+            <div class="journal">Nature Energy</div>
+            <div class="paper-title">Equitable Low-Carbon Transition Pathways for California's Oil Extraction</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BIO PAGE -->
+<div id="page-bio" class="page">
+  <h2 class="section-title">Bio</h2>
+  <div class="bio-text">
+    <p>I use methods in environmental economics, industrial organization, and urban economics to answer research questions in energy and the environment. My research studies determinants and solutions to environmental inequality, tradeoffs in environmental policy, and emerging trends and issues in energy and electricity markets.</p>
+    <p>I am an Assistant Professor at the University of California, Berkeley, in the <a href="https://erg.berkeley.edu/">Energy and Resources Group</a>, a Faculty Affiliate at the <a href="https://haas.berkeley.edu/energy-institute/">Energy Institute at Haas</a>, a Fellow of the <a href="https://www.cesifo.org/en">CESifo Research Network</a>, and an Affiliate at the <a href="https://emlab.ucsb.edu/">Environmental Markets Lab</a> (emLab) at the University of California, Santa Barbara. I was previously an Assistant Professor in the Economics Department at the University of North Carolina at Chapel Hill (2020&ndash;2023) and a postdoctoral scholar at emLab (2019&ndash;2020).</p>
+    <p>I hold a M.ESc., M.Phil., and Ph.D. in Environmental Economics from Yale, and a B.A. from the University of California, Berkeley. I also have professional experiences in the electricity industry, federal government, and non-governmental research organizations.</p>
+  </div>
+</div>
+
+<!-- RESEARCH PAGE -->
+<div id="page-research" class="page">
+  <h2 class="section-title">Research</h2>
+
+  <h3 class="subsection-title">WORKING PAPERS</h3>
+
+  <div class="paper-entry">
+    <div class="paper-title">Benefits, Costs, and Distributional Outcomes in an Environmental Market</div>
+    <div class="authors">Olivier Deschenes and Paige Weber</div>
+    <div class="links">
+      <a href="https://haas.berkeley.edu/wp-content/uploads/WP355.pdf">Working Paper</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Does Regulation Distort Exit Decisions? Evidence from U.S. Power Plants</div>
+    <div class="authors">Lucas Davis and Paige Weber</div>
+    <div class="links">
+      <a href="https://haas.berkeley.edu/wp-content/uploads/WP354.pdf">Working Paper</a>
+      <a href="https://energyathaas.wordpress.com/2025/11/03/does-regulation-distort-exit-decisions/">EI Blog</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Health, Labor, and Equity in the Low Carbon Transition of California's Petroleum Refineries</div>
+    <div class="authors">Measrainsey Meng, Danae Hernandez-Cortes, Chris Malloy, Tracey Mangin, Vincent Thivierge, Ranjit Deshmukh, Paige Weber, Olivier Deschenes, David W. Lea, and Kyle C. Meng</div>
+  </div>
+
+  <h3 class="subsection-title">PUBLICATIONS</h3>
+
+  <div class="paper-entry">
+    <div class="paper-title">Intermittency or Uncertainty? Impacts of Renewable Energy in Electricity Markets</div>
+    <div class="authors">Paige Weber and Matt Woerman</div>
+    <div class="venue">Journal of the Association of Environmental and Resource Economists, 2024</div>
+    <div class="award">Winner of the 2022 USAEE Young Professional Best Paper Award</div>
+    <div class="links">
+      <a href="https://www.cesifo.org/en/publications/2022/working-paper/intermittency-or-uncertainty-impacts-renewable-energy-electricity">Working Paper</a>
+      <a href="https://open.spotify.com/episode/1sslShF4XYoxeiNDjzo3xh?si=kIQ6-8ToTq-Wv4arDES5Jg">Ergs &amp; Equilibrium Podcast</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Recent Findings and Methodologies in Economics Research in Environmental Justice</div>
+    <div class="authors">Lucas Cain, Danae Hernandez-Cortes, Chris Timmins, and Paige Weber</div>
+    <div class="venue">Review of Environmental Economics and Policy, 2024</div>
+    <div class="links">
+      <a href="https://www.journals.uchicago.edu/doi/10.1086/728100">Paper</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Well Setbacks Limit California's Oil Supply with Larger Health Benefits and Employment Losses than Excise and Carbon Taxes</div>
+    <div class="authors">Ranjit Deshmukh, Paige Weber, Olivier Deschenes, David Lea, Hernandez-Cortes, Tia Kordell, Ruiwen Lee, Chris Malloy, Tracey Mangin, Measrainsey Meng, Sandy Sum, Vincent Thivierge, Anagha Uppal, and Kyle C. Meng</div>
+    <div class="venue">Nature Energy, 2023</div>
+    <div class="links">
+      <a href="https://www.nature.com/articles/s41560-023-01273-0">Paper</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Can Bitcoin Mining Increase Renewable Electricity Capacity?</div>
+    <div class="authors">August Bruno, Paige Weber, and Andrew J. Yates</div>
+    <div class="venue">Resource and Energy Economics, 2023</div>
+    <div class="links">
+      <a href="https://doi.org/10.1016/j.reseneeco.2023.101376">Paper</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Equitable Low-Carbon Transition Pathways for California's Oil Extraction</div>
+    <div class="authors">Ranjit Deshmukh, Paige Weber, Olivier Deschenes, Danae Hernandez-Cortes, Tia Kordell, Ruiwen Lee, Chris Malloy, Tracey Mangin, Measrainsey Meng, Sandy Sum, Vincent Thivierge, Anagha Uppal, David Lea, Kyle C. Meng</div>
+    <div class="venue">Nature Energy, 2023</div>
+    <div class="links">
+      <a href="https://rdcu.be/dcrTD">Paper</a>
+      <a href="https://github.com/emlab-ucsb/ca-transport-supply-decarb">Data and Code</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">U.S. West Coast Droughts and Heat Waves Exacerbate Pollution Inequality and Can Undermine Emission Control Policies</div>
+    <div class="authors">Amir Zeighami, Jordan Kern, Andrew J. Yates, Paige Weber, and August Bruno</div>
+    <div class="venue">Nature Communications, 2023</div>
+    <div class="links">
+      <a href="https://www.nature.com/articles/s41467-023-37080-0">Paper</a>
+      <a href="https://www.latimes.com/california/story/2023-03-30/drought-and-heat-waves-worsen-air-pollution">LA Times</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Decomposing Trends in U.S. Air Pollution Disparities from Electricity</div>
+    <div class="authors">Danae Hernandez-Cortes, Kyle C. Meng, and Paige Weber</div>
+    <div class="venue">Environmental and Energy Policy and the Economy, 2023</div>
+    <div class="links">
+      <a href="https://www.journals.uchicago.edu/doi/10.1086/722674">Paper</a>
+      <a href="https://www.nber.org/digest/202209/trends-exposure-air-pollution-power-plants">NBER Digest</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Making Clean Firms Cleaner: Targeting Environmental Regulations to Maximize Returns</div>
+    <div class="authors">Paige Weber</div>
+    <div class="venue">American Economic Review Papers and Proceedings, 2021</div>
+    <div class="links">
+      <a href="#">Paper</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Long-term Trends in Wildfire Damages in California</div>
+    <div class="authors">Hanna Buechi, Paige Weber, Sarah Heard, Dick Cameron, and Andrew J. Plantinga</div>
+    <div class="venue">International Journal of Wildland Fire, 2021</div>
+    <div class="links">
+      <a href="#">Paper</a>
+    </div>
+  </div>
+
+  <h3 class="subsection-title">WORK IN PROGRESS</h3>
+
+  <div class="paper-entry">
+    <div class="paper-title">Do Environmental Justice Policies Narrow Inequality?</div>
+    <div class="authors">Danae Hernandez-Cortes, Kyle C. Meng, Paige Weber, and Chris Timmins</div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Environmental Externalities with Free Goods and Market Power</div>
+    <div class="authors">Paige Weber and Andy Yates</div>
+  </div>
+
+  <h3 class="subsection-title">OTHER WORK</h3>
+
+  <div class="paper-entry">
+    <div class="paper-title">Enhancing Equity while Eliminating Emissions in California's Supply of Transportation Fuels</div>
+    <div class="authors">Olivier Deschenes, Ranjit Deshmukh, David Lea, Kyle Meng, Paige Weber et al.</div>
+    <div class="venue">CalEPA report, 2021</div>
+    <div class="links">
+      <a href="https://calepa.ca.gov/2021/04/21/press-release-carbon-neutrality-studies-identify-potential-paths-for-california-to-reach-2045-goal/">CalEPA Press Release</a>
+    </div>
+  </div>
+
+  <div class="paper-entry">
+    <div class="paper-title">Dynamic Responses to Carbon Pricing in the Electricity Sector</div>
+    <div class="authors">Paige Weber</div>
+    <div class="award">Winner of the 2019 Distinguished CESifo Affiliate Award</div>
+    <div class="links">
+      <a href="#">Working Paper</a>
+    </div>
+  </div>
+</div>
+
+<!-- CV PAGE -->
+<div id="page-cv" class="page">
+  <h2 class="section-title">CV</h2>
+  <div class="cv-content">
+    <p>Download my curriculum vitae below.</p>
+    <a href="https://www.paige-weber.com/uploads/1/2/6/7/126784653/cv_weberp_oct22.pdf">
+      <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      CV Download
+    </a>
+  </div>
+</div>
+
+<!-- TEACHING PAGE -->
+<div id="page-teaching" class="page">
+  <h2 class="section-title">Teaching</h2>
+  <div class="teaching-content">
+    <p><strong>Spring 2025 Courses:</strong></p>
+    <div class="course-item" style="margin-top: 12px;">
+      ENERES 140/240 &mdash; Environmental Justice &amp; Economics
+    </div>
+    <div class="course-item">
+      ENERES 293b &mdash; ERG Masters Seminar
+    </div>
+    <p style="margin-top: 24px;">For advising for UC Berkeley students, email me for office hours sign-up link.</p>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  &copy; 2025 Paige Weber
+</footer>
+
+<script>
+function showPage(page) {
+  // Hide all pages
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  // Show target
+  document.getElementById('page-' + page).classList.add('active');
+  // Update nav
+  document.querySelectorAll('nav a').forEach(a => {
+    a.classList.toggle('active', a.dataset.page === page);
+  });
+  // Close mobile nav
+  document.querySelector('nav').classList.remove('open');
+  // Scroll to top
+  window.scrollTo(0, 0);
+  // Update URL hash
+  history.pushState(null, '', page === 'home' ? '#' : '#' + page);
+}
+
+// Handle back/forward
+window.addEventListener('popstate', () => {
+  const page = location.hash.slice(1) || 'home';
+  showPage(page);
+});
+
+// Load correct page on initial visit
+const initialPage = location.hash.slice(1) || 'home';
+if (initialPage !== 'home') showPage(initialPage);
+</script>
+
+</body>
+</html>
